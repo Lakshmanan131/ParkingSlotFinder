@@ -85,6 +85,4 @@ test:
 #
 production:
   <<: *default
-  database: ParkingSlotFinder_production
-  username: ParkingSlotFinder
-  password: <%= ENV["PARKINGSLOTFINDER_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>

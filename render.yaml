@@ -1,0 +1,18 @@
+databases:
+  - name: Parking
+    databaseName: parking_6dvt
+    user: parking_6dvt_user
+
+services:
+  - type: web
+    name: Slot
+    runtime: ruby
+    buildCommand: "./bin/render-build.sh"
+    startCommand: "bundle exec puma -C config/puma.rb"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: Parking
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false
