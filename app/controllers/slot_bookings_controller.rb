@@ -29,7 +29,7 @@ class SlotBookingsController < ApplicationController
       nearest_slot.update(slot_available: true)
 
       if @slot_booking.save
-        redirect_to root_path, notice: "Booking successful as nearest available slot is #{nearest_slot.slot_number}."
+        redirect_to slot_bookings_path, notice: "Booking successful as nearest available slot is #{nearest_slot.slot_number}."
 
       else
         get_entrance_slots
@@ -73,7 +73,7 @@ class SlotBookingsController < ApplicationController
     @booking = SlotBooking.find(params[:id])
     @booking.slot.update(slot_available: false)
     @booking.update(active: false)
-    redirect_to root_path,notice: "The vehicle has been left successfully"
+    redirect_to slot_bookings_path,notice: "The vehicle has been left successfully"
   end
 
   private

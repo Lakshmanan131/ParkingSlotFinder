@@ -11,10 +11,10 @@ end
 
 slot_no = 0
 (1..4).each do |seeds|
-  (1..10).each do |row|
-    (1..25).each do |column|
+  (1..10).each do |column|
+    (1..25).each do |row|
       slot_no += 1
-      Slot.create(slot_number: slot_no, slot_available: false , slot_distance: column + row, entrance_id: seeds)
+      Slot.create(slot_number: slot_no, slot_available: false , slot_distance: row + column, entrance_id: seeds)
     end
   end
 end

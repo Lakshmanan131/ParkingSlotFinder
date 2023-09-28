@@ -16,7 +16,7 @@
   <h4 style= text-decoration:underline; >Your Booked Slots</h4>
 
   <br>
-
+<% if @slot_bookings.present? %>
   <table class="table table-striped table-hover">
     <thead class="field">
     <tr>
@@ -41,4 +41,10 @@
     <% end %>
     </tbody>
   </table>
+    <br>
+<% else %>
+  <p>No slot bookings found. Please Book Your Slots</p>
+<% end %>
+  <br>
+  <%= link_to 'Home', root_path, class: "btn btn-outline-dark" %>
 </div>

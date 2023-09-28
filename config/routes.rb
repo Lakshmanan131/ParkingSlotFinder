@@ -8,6 +8,6 @@ Rails.application.routes.draw do
   post 'exit_parking/:id', to: 'slot_bookings#exit_parking', as: "exit_parking"
   get 'slot_allocation_history', to: 'slot_bookings#slot_allocation_history'
 
-  root 'slot_bookings#index'
+  root 'welcome#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

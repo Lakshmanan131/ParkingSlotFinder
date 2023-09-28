@@ -20,7 +20,7 @@
       <span class="navbar-brand mb-0 h1">Parking Slot Finder</span>
 
       <% if user_signed_in? %>
-        <%= button_to 'Logout', destroy_user_session_path, method: :delete, class: "btn btn-outline-danger" %>
+        <%= button_to 'Logout', destroy_user_session_path, method: :delete, class: "btn btn-outline-danger ml-auto" %>
       <% else %>
         <%= link_to 'Login', new_user_session_path, class: "btn btn-outline-blue"%>
       <% end %>
