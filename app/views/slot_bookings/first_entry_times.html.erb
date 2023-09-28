@@ -1,0 +1,31 @@
+<div class="field">
+
+<h2 style= text-decoration:underline;>Vehicle First Entry Times</h2>
+
+<br>
+
+<table  class="table table-hover" align="center">
+
+  <thead class="field">
+  <tr>
+    <th>Vehicle Registration Number</th>
+    <th>First Entry Time</th>
+  </tr>
+  </thead>
+
+  <tbody class="field">
+  <% @first_entry_times.each do |registration_number, entry_time| %>
+    <tr>
+      <td><%= registration_number %></td>
+      <td><%= entry_time.strftime('%Y-%m-%d %H:%M:%S') %></td>
+    </tr>
+  <% end %>
+  </tbody>
+
+</table>
+
+<br>
+
+<%= link_to 'Home', root_path,  class: "btn btn-outline-dark" %>
+
+</div>

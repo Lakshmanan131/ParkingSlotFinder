@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  vehicle_registration_number: MyString
+  phone_number: 1
+  entry_time: 2023-09-27 17:18:25
+  active: false
+  user: one
+  entrance: one
+  slot_booking: one
+
+two:
+  vehicle_registration_number: MyString
+  phone_number: 1
+  entry_time: 2023-09-27 17:18:25
+  active: false
+  user: two
+  entrance: two
+  slot_booking: two

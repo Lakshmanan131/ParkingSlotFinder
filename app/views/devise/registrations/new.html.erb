@@ -1,0 +1,36 @@
+<div class="field">
+<h2>Sign up</h2>
+  <br>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="field form-group d-flex justify-content-center">
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control w-25", placeholder:"Enter your Email" %>
+  </div>
+
+    <br>
+
+  <div class="field form-group d-flex justify-content-center">
+    <%= f.password_field :password, autocomplete: "new-password", class:"form-control w-25", placeholder:"Enter your password(Minimum 6 characters)" %>
+  </div>
+
+    <br>
+
+  <div class="field form-group d-flex justify-content-center">
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"form-control w-25", placeholder:"Enter your password confirmation(Minimum 6 characters)" %>
+  </div>
+
+    <br>
+
+  <div class="field form-group d-flex justify-content-center">
+    <%= f.submit "Sign up", class: "btn btn-primary form-control w-25" %>
+  </div>
+<% end %>
+
+  <br>
+  <p>or</p>
+  <br>
+
+<%= render "devise/shared/links" %>
+</div>

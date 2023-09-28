@@ -1,0 +1,41 @@
+<div class="field">
+<%= form_with(model: @slot_booking) do |f| %>
+
+  <% if @slot_booking.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@slot_booking.errors.count, "error") %> prohibited this topic from being saved:</h2>
+
+      <ul>
+        <% @slot_booking.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+<% end %>
+
+    <br>
+
+    <div class="field form-group d-flex justify-content-center">
+      <%= f.collection_select :entrance_id, @entrances, :id, :way, class:"form-control w-25"%>
+    </div>
+
+  <br>
+
+  <div class="field form-group d-flex justify-content-center">
+    <%= f.text_field :vehicle_registration_number, class:"form-control w-25", placeholder:"Enter Vehicle Registration Number" %>
+  </div>
+
+    <br>
+
+  <div class="field form-group d-flex justify-content-center">
+    <%= f.text_field :phone_number, class:"form-control w-25", placeholder:"Enter Phone Number(Minimum 10 digits)" %>
+  </div>
+
+    <br>
+
+  <div class="actions">
+    <%= f.submit class: "btn btn-outline-success" %>
+  </div>
+
+<% end %>
+</div>

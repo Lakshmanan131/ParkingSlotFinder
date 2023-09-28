@@ -1,0 +1,47 @@
+<div class="field">
+<h2 style= text-decoration:underline;>Slot Allocation History</h2>
+
+<br>
+
+<%= form_tag(slot_allocation_history_path, method: :get) do %>
+  <div class="field form-group d-flex justify-content-center">
+    <%= text_field_tag :search, params[:search], class:"form-control w-25", placeholder:" Enter Vehicle Registration Number" %>
+
+    <%= submit_tag 'Search' %>
+  </div>
+<% end %>
+
+<% if @allocation_history.present? %>
+
+  <br>
+
+  <table class="table table-hover">
+    <thead class="field">
+    <tr>
+      <th>Slot Number</th>
+      <th>Entry Time</th>
+      <th>Vehicle Registration Number</th>
+      <th>Phone Number</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody class="field">
+    <% @allocation_history&.each do |booking| %>
+      <tr>
+        <td><%= booking.slot.slot_number %></td>
+        <td><%= booking.entry_time %></td>
+        <td><%= booking.vehicle_registration_number %></td>
+        <td><%= booking.phone_number %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+
+  <br>
+<% else %>
+  <br>
+  <p> Please enter a search term to vehicle Allocation History.</p>
+<% end %>
+
+  <%= link_to 'Home', root_path, class: "btn btn-outline-dark" %>
+</div>
