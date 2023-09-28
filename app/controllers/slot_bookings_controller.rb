@@ -50,7 +50,7 @@ class SlotBookingsController < ApplicationController
   def slot_occupancy
     @from_date = params[:from_date]
     @to_date = params[:to_date]
-    @slot_bookings = SlotBooking.includes([:slot]).all
+    @slot_bookings = SlotBooking.includes([:slot]).all.paginate(:page => params[:page], :per_page => 8)
 
     if @from_date.present? && @to_date.present?
       @from_date = Date.parse(@from_date)
