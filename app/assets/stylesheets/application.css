@@ -46,3 +46,8 @@
     align-content: center;
     text-align: center;
 }
+
+.display-1 {
+    /*font-weight: bold;*/
+    font-family: cursive;
+}

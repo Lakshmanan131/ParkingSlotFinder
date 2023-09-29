@@ -5,8 +5,11 @@
   <br>
 
 <%= form_with(url: slot_occupancy_path, local: false, method: :get) do |f| %>
-  <%= f.date_field :from_date %>
-  <%= f.date_field :to_date %>
+    <label for="from_date">From Date:</label>
+    <%= date_field_tag "from_date", nil, class: "datepicker" %>
+
+    <label for="to_date">To Date:</label>
+    <%= date_field_tag "to_date", nil, class: "datepicker" %>
   <%= f.submit "Search", class: "btn btn-sm btn-primary" %>
 <% end %>
 

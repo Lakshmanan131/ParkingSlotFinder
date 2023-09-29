@@ -1,7 +1,7 @@
 databases:
   - name: Parking
-    databaseName: parking_6dvt
-    user: parking_6dvt_user
+    databaseName: parking_dt5z
+    user: parking_dt5z_user
 
 services:
   - type: web
